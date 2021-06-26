@@ -1,4 +1,3 @@
-
 # frozen_string_literal: true
 
 require 'rails_helper'
@@ -35,22 +34,20 @@ RSpec.describe 'Users', type: :request do
     end
   end
 
-   it 'update the user' do
+  it 'update the user' do
     user = create(:user)
-    body_data = { user: {name: 'Matheus', email: 'matheus.teste@gmail.com', password: '654321' }}
+    body_data = { user: { name: 'Matheus', email: 'matheus.teste@gmail.com', password: '654321' } }
 
     put "/api/v1/users/#{user.id}", params: body_data
-  
+
     expect(response.status).to eq(200)
   end
 
-  it "deletes the user" do
-    
+  it 'deletes the user' do
     user = create(:user)
 
     delete "/api/v1/users/#{user.id}"
 
-    expect(response.status).to eq(200) 
+    expect(response.status).to eq(200)
   end
-    
 end
