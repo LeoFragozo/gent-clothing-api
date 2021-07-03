@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_30_222653) do
+ActiveRecord::Schema.define(version: 2021_07_02_230835) do
+
+  create_table "accessories", force: :cascade do |t|
+    t.string "description"
+    t.string "dresscode"
+    t.string "color"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_accessories_on_user_id"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
@@ -38,5 +48,6 @@ ActiveRecord::Schema.define(version: 2021_06_30_222653) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "accessories", "users"
   add_foreign_key "clothings", "users"
 end

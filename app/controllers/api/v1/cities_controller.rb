@@ -18,19 +18,18 @@ module Api
       def create
         city = City.new(city_params)
 				if city.save
-					render json: {status: 'SUCCESS', message:'Cidade salva', data:city},status: :ok
+					render json: {status: 'SUCCESS', message:'Cidade salvas', data:city},status: :ok
 				else
-					render json: {status: 'ERROR', message:'Cidade não salva', data:city.erros},status: :unprocessable_entity
+					render json: {status: 'ERROR', message:'Cidade não salvas', data:city.erros},status: :unprocessable_entity
 				end
       end
-      
       
       def update
         city = City.find(params[:id])
         if city.update(city_params)
-          render json: { status: 'SUCCESS', message: 'Cidade atualizada', data: city }, status: :ok
+          render json: { status: 'SUCCESS', message: 'Cidades atualizadas', data: city }, status: :ok
         else
-          render json: { status: 'ERROR', message: 'Cidade não atualizada', data: city.erros },
+          render json: { status: 'ERROR', message: 'Cidades não atualizadas', data: city.erros },
                  status: :unprocessable_entity
         end
       end
@@ -38,7 +37,7 @@ module Api
       def destroy
         city = City.find(params[:id])
         city.destroy
-        render json: { status: 'SUCCESS', message: 'Cidade deletada ', data: city }, status: :ok
+        render json: { status: 'SUCCESS', message: 'Cidades deletadas ', data: city }, status: :ok
       end
 
       private

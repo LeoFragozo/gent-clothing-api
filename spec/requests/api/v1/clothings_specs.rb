@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe ''clothings', type: :request do
+RSpec.describe  'Clothings', type: :request do
   describe 'GET #show' do
     it 'must return 200 http status' do
       clothing = create(:clothing)
