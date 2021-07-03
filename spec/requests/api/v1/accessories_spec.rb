@@ -12,8 +12,8 @@ RSpec.describe 'Accessories', type: :request do
     expect(response).to have_http_status(:ok)
   end
 
-  it 'must return the current clothing data' do
-    clothing = create(:clothing)
+  it 'must return the current accessory data' do
+    accessory = create(:accessory)
 
     get '/api/v1/accessories'
 

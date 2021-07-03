@@ -7,7 +7,7 @@ RSpec.describe  'Clothings', type: :request do
     it 'must return 200 http status' do
       clothing = create(:clothing)
 
-      get '/api/v1//clothings'
+      get '/api/v1/clothings'
 
       expect(response).to have_http_status(:ok)
     end
