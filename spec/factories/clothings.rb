@@ -5,6 +5,6 @@ FactoryBot.define do
     description { "Oxford Shirt" }
     dresscode { "Business Casual" }
     color { "White" }
-    user { clothing.user.id }
+    user
   end
 end

@@ -5,6 +5,6 @@ FactoryBot.define do
     description { "Oxford shoes" }
     dresscode { "Business/Black Tie" }
     color { "Black" }
-    user { acessory.user.id }
+    user
   end
 end
