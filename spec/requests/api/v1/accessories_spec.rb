@@ -4,9 +4,16 @@ require 'rails_helper'
 
 RSpec.describe 'Accessories', type: :request do
   describe 'GET #show' do
-
-  it 'must return the current accessory data' do
+  it 'must return 200 http status' do
     accessory = create(:accessory)
+
+    get '/api/v1/accessories'
+
+    expect(response).to have_http_status(:ok)
+  end
+
+  it 'must return the current clothing data' do
+    clothing = create(:clothing)
 
     get '/api/v1/accessories'
 
